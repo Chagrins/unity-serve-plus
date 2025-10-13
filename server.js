@@ -2,6 +2,8 @@
 
 import http from 'http';
 import fs from 'fs';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'path';
 import os from 'os';
 import chalk from 'chalk';
@@ -111,27 +113,22 @@ async function startServer() {
   });
 
   server.listen(port, () => {
-    console.log(chalk.green.bold('Unity Serve'));
+    console.log(unityServeTagline);
+    console.log(chalk.bold(`${chalk.green('→')} Local:  `), chalk.cyan(`http://localhost:${port}`));
+    console.log(chalk.bold(`${chalk.green('→')} Network:`), chalk.cyan(`http://${localIP}:${port}`));
     console.log('');
-    console.log('→ Local:  ', `http://localhost:${port}`);
-    console.log('→ Network:', `http://${localIP}:${port}`);
-    console.log('Press Ctrl+C to stop the server');
-  });
-
-  // Graceful shutdown
-  process.on('SIGINT', () => {
-    console.log('\n👋 Shutting down server...');
-    server.close(() => {
-      console.log('✅ Server stopped');
-      process.exit(0);
-    });
+    console.log(chalk.gray('Press Ctrl+C to stop the server'));
   });
 }
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const pkg = JSON.parse(readFileSync(path.join(__dirname, './package.json'), 'utf8'));
+const unityServeTagline = `\n${chalk.green.bold('UNITY-SERVE')}${chalk.green(` v${pkg.version}`)}\n`;
+
 // Check if index.html exists
 if (!fs.existsSync('index.html')) {
-  console.error('❌ Error: No index.html found in current directory');
-  console.log('💡 Make sure you run this command in your Unity WebGL build folder');
+  console.log(unityServeTagline);
+  console.log(chalk.bold(`${chalk.red("→")} Error:`), 'not in a Unity WebGL build folder');
   process.exit(1);
 }
 
