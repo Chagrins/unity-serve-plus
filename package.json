@@ -2,6 +2,7 @@
   "name": "@sov3rain/unity-serve",
   "version": "1.0.1",
   "description": "A lightweight, zero-dependency Node.js web server for serving Unity WebGL builds locally and across networks",
+  "type": "module",
   "main": "server.js",
   "bin": {
     "unity-serve": "server.js"
@@ -37,5 +38,8 @@
   "files": [
     "server.js",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+    "chalk": "^5.6.2"
+  }
 }

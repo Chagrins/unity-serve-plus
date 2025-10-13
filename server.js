@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+import chalk from 'chalk';
 
 // MIME types for Unity WebGL builds
 const mimeTypes = {
@@ -59,7 +60,7 @@ async function startServer() {
 
   const server = http.createServer((req, res) => {
     let filePath = path.join(currentDir, req.url === '/' ? 'index.html' : req.url);
-    
+
     // Security: prevent directory traversal
     if (!filePath.startsWith(currentDir)) {
       res.writeHead(403, { 'Content-Type': 'text/plain' });
@@ -110,11 +111,11 @@ async function startServer() {
   });
 
   server.listen(port, () => {
-    console.log('🎮 Unity WebGL Server Started!');
-    console.log('📁 Serving files from:', currentDir);
-    console.log('🌐 Local URL:', `http://localhost:${port}`);
-    console.log('📱 Network URL:', `http://${localIP}:${port}`);
-    console.log('⏹️  Press Ctrl+C to stop the server');
+    console.log(chalk.green.bold('Unity Serve'));
+    console.log('');
+    console.log('→ Local:  ', `http://localhost:${port}`);
+    console.log('→ Network:', `http://${localIP}:${port}`);
+    console.log('Press Ctrl+C to stop the server');
   });
 
   // Graceful shutdown
