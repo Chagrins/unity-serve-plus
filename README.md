@@ -45,11 +45,12 @@ npx @sov3rain/unity-server
 When you start the server, you'll see output like this:
 
 ```
-🎮 Unity WebGL Server Started!
-📁 Serving files from: /path/to/your/build
-🌐 Local URL: http://localhost:3000
-📱 Network URL: http://192.168.1.100:3000
-⏹️  Press Ctrl+C to stop the server
+UNITY-SERVE v1.0.1
+
+→ Local:   http://localhost:3000
+→ Network: http://192.168.24.150:3000
+
+Press Ctrl+C to stop the server
 ```
 
 ## Testing on Other Devices
