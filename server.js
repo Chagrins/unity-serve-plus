@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-import http from 'http';
-import fs from 'fs';
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import path from 'path';
-import os from 'os';
 import chalk from 'chalk';
+import fs, { readFileSync } from 'node:fs';
+import http from 'node:http';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // MIME types for Unity WebGL builds
 const mimeTypes = {
