@@ -1,6 +1,7 @@
 # Unity Serve
 
 A lightweight, zero-dependency Node.js web server specifically designed for serving Unity WebGL builds locally and across networks.
+A fork from Sov3rain/unity-serve but supports optional parameters and removes the Chalk dependency.
 
 ## Features
 
@@ -16,7 +17,7 @@ A lightweight, zero-dependency Node.js web server specifically designed for serv
 ### Global Installation (Recommended)
 
 ```bash
-npm install -g @sov3rain/unity-server
+npm install -g @Chagrins/unity-server
 ```
 
 Then use anywhere:
@@ -37,7 +38,7 @@ unity-serve
 
 ```bash
 cd path/to/your/unity-webgl-build
-npx @sov3rain/unity-server
+npx @Chagrins/unity-server
 ```
 
 ## What You'll See
@@ -45,7 +46,7 @@ npx @sov3rain/unity-server
 When you start the server, you'll see output like this:
 
 ```
-UNITY-SERVE v1.0.1
+UNITY-SERVE v1.0.0
 
 → Local:   http://localhost:3000
 → Network: http://192.168.24.150:3000

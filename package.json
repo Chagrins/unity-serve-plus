@@ -1,6 +1,6 @@
 {
-  "name": "@sov3rain/unity-serve",
-  "version": "1.1.0",
+  "name": "@Chagrins/unity-serve-plus",
+  "version": "1.0.0",
   "description": "A lightweight, zero-dependency Node.js web server for serving Unity WebGL builds locally and across networks",
   "type": "module",
   "main": "server.js",
@@ -21,16 +21,16 @@
     "development-server",
     "unity3d"
   ],
-  "author": "Sov3rain",
+  "author": "Chagrins",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sov3rain/unity-server.git"
+    "url": "git+https://https://github.com/Chagrins/unity-serve-plus.git"
   },
   "bugs": {
-    "url": "https://github.com/Sov3rain/unity-server/issues"
+    "url": "https://github.com/Chagrins/unity-serve-plus/issues"
   },
-  "homepage": "https://github.com/Sov3rain/unity-server#readme",
+  "homepage": "https://github.com/Chagrins/unity-serve-plus#readme",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -38,11 +38,5 @@
   "files": [
     "server.js",
     "README.md"
-  ],
-  "dependencies": {
-    "chalk": "^5.6.2"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.6"
-  }
+  ]
 }
